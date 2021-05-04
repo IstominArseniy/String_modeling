@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/arseniy/String_modeling/main.cpp">
+		<Unit filename="/Users/arseniy/String_modeling/wav_generator.cpp">
 			<Option target="String_modeling"/>
 		</Unit>
 		<Unit filename="/Users/arseniy/String_modeling/CMakeLists.txt">

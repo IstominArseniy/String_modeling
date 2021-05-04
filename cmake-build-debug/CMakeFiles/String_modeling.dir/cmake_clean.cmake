@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/String_modeling.dir/main.cpp.o"
+  "CMakeFiles/String_modeling.dir/wav_generator.cpp.o"
   "String_modeling"
   "String_modeling.pdb"
 )

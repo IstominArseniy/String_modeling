@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/arseniy/String_modeling/main.cpp" "/Users/arseniy/String_modeling/cmake-build-debug/CMakeFiles/String_modeling.dir/main.cpp.o"
+  "/Users/arseniy/String_modeling/wav_generator.cpp" "/Users/arseniy/String_modeling/cmake-build-debug/CMakeFiles/String_modeling.dir/wav_generator.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

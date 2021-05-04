@@ -57,27 +57,27 @@ include CMakeFiles/String_modeling.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/String_modeling.dir/flags.make
 
-CMakeFiles/String_modeling.dir/main.cpp.o: CMakeFiles/String_modeling.dir/flags.make
-CMakeFiles/String_modeling.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/arseniy/String_modeling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/String_modeling.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/String_modeling.dir/main.cpp.o -c /Users/arseniy/String_modeling/main.cpp
+CMakeFiles/String_modeling.dir/wav_generator.cpp.o: CMakeFiles/String_modeling.dir/flags.make
+CMakeFiles/String_modeling.dir/wav_generator.cpp.o: ../wav_generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/arseniy/String_modeling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/String_modeling.dir/wav_generator.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/String_modeling.dir/wav_generator.cpp.o -c /Users/arseniy/String_modeling/wav_generator.cpp
 
-CMakeFiles/String_modeling.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/String_modeling.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/arseniy/String_modeling/main.cpp > CMakeFiles/String_modeling.dir/main.cpp.i
+CMakeFiles/String_modeling.dir/wav_generator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/String_modeling.dir/wav_generator.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/arseniy/String_modeling/wav_generator.cpp > CMakeFiles/String_modeling.dir/wav_generator.cpp.i
 
-CMakeFiles/String_modeling.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/String_modeling.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/arseniy/String_modeling/main.cpp -o CMakeFiles/String_modeling.dir/main.cpp.s
+CMakeFiles/String_modeling.dir/wav_generator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/String_modeling.dir/wav_generator.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/arseniy/String_modeling/wav_generator.cpp -o CMakeFiles/String_modeling.dir/wav_generator.cpp.s
 
 # Object files for target String_modeling
 String_modeling_OBJECTS = \
-"CMakeFiles/String_modeling.dir/main.cpp.o"
+"CMakeFiles/String_modeling.dir/wav_generator.cpp.o"
 
 # External object files for target String_modeling
 String_modeling_EXTERNAL_OBJECTS =
 
-String_modeling: CMakeFiles/String_modeling.dir/main.cpp.o
+String_modeling: CMakeFiles/String_modeling.dir/wav_generator.cpp.o
 String_modeling: CMakeFiles/String_modeling.dir/build.make
 String_modeling: CMakeFiles/String_modeling.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/arseniy/String_modeling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable String_modeling"

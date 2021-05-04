@@ -123,32 +123,32 @@ String_modeling/fast:
 	$(MAKE) -f CMakeFiles/String_modeling.dir/build.make CMakeFiles/String_modeling.dir/build
 .PHONY : String_modeling/fast
 
-main.o: main.cpp.o
+wav_generator.o: wav_generator.cpp.o
 
-.PHONY : main.o
+.PHONY : wav_generator.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/String_modeling.dir/build.make CMakeFiles/String_modeling.dir/main.cpp.o
-.PHONY : main.cpp.o
+wav_generator.cpp.o:
+	$(MAKE) -f CMakeFiles/String_modeling.dir/build.make CMakeFiles/String_modeling.dir/wav_generator.cpp.o
+.PHONY : wav_generator.cpp.o
 
-main.i: main.cpp.i
+wav_generator.i: wav_generator.cpp.i
 
-.PHONY : main.i
+.PHONY : wav_generator.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/String_modeling.dir/build.make CMakeFiles/String_modeling.dir/main.cpp.i
-.PHONY : main.cpp.i
+wav_generator.cpp.i:
+	$(MAKE) -f CMakeFiles/String_modeling.dir/build.make CMakeFiles/String_modeling.dir/wav_generator.cpp.i
+.PHONY : wav_generator.cpp.i
 
-main.s: main.cpp.s
+wav_generator.s: wav_generator.cpp.s
 
-.PHONY : main.s
+.PHONY : wav_generator.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/String_modeling.dir/build.make CMakeFiles/String_modeling.dir/main.cpp.s
-.PHONY : main.cpp.s
+wav_generator.cpp.s:
+	$(MAKE) -f CMakeFiles/String_modeling.dir/build.make CMakeFiles/String_modeling.dir/wav_generator.cpp.s
+.PHONY : wav_generator.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... String_modeling"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... wav_generator.o"
+	@echo "... wav_generator.i"
+	@echo "... wav_generator.s"
 .PHONY : help
 
 
