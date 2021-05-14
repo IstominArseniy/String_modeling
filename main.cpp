@@ -7,6 +7,7 @@
 #include <random>
 #include <list>
 #include "vecFunc.cpp"
+#include "wav_generator.cpp"
 
 
 class String{
@@ -26,15 +27,33 @@ private:
     long int Number_of_particles = (int)(L/h);
     
     std::vector<std::vector<double>> Data;
+    
+    std::vector<float> sound;
+    
+    double coord_i = (int)(0.7*L/h); //Координата считывания звука
 
 
 	void generate_String(){
+        int n = Number_of_particles;
 		for (int i = 0; i < Number_of_particles; i++){
-			
+            
+            if (i < 0.7*Number_of_particles){
+                Data[0][i] = i/(7.0*n); //Предыдущее состояние сетки
+                Data[1][i] = i/(7.0*n); //Текущее состояние
+                Data[2][i] = 0; //Следующее состояние сетки
+                
+            }else{
+                Data[0][i] = 1.0/3.0-i/(3.0*n); //Предыдущее состояние сетки
+                Data[1][i] = 1.0/3.0-i/(3.0*n); //Текущее состояние
+                Data[2][i] = 0; //Следующее состояние сетки
+                    
+            }
+            
+            /* Работающий профиль 4 степени
             Data[0][i] = 1e-8*i*i*(i - Number_of_particles)*(i - Number_of_particles); //Предыдущее состояние сетки
             Data[1][i] = 1e-8*i*i*(i - Number_of_particles)*(i - Number_of_particles); //Текущее состояние
             Data[2][i] = 0; //Следующее состояние сетки
-                
+            */
 		}
 	}
 
@@ -97,21 +116,35 @@ public:
         Data[0] = Data[1];
         Data[1] = Data[2];
         
+        sound.push_back(Data[1][coord_i]);
+        
     }
+    
+    std::vector<float> Get_some_sound(){
+        return sound;
+    }
+    
 };
 
 
 int main(){
 	
+    int Num_step = 500000; //Количество шагов рассчета
     std::ofstream fout;
     fout.open("Grid.xyz");
 	String c = String();
     
-    for (int i = 0; i < 5000; i++){
-        if (i %1 == 0)
+    for (int i = 0; i < Num_step; i++){
+        if (i % 10 == 0)
             c.output(fout);
         c.move();
     }
     //std::cout << M_PI << std::endl;
     fout.close();
+    
+    std::vector<float> data;
+    data = c.Get_some_sound();
+    writeWAV(data, "Attempt1");
+    
+    return 0;
 }
