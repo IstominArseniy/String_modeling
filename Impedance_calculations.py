@@ -72,18 +72,31 @@ def Zfoster(f, *params):
 # freq = np.arange(100, 20000, 50)
 freq = np.logspace(2, 4, 500)
 p0 = []
+bounds_down = []
+bounds_up = []
 for i in range(M1):
     p0.append(1000)
+    bounds_down.append(0.0)
+    bounds_up.append(1e8)
 for i in range(M1):
     p0.append(0.0001)
+    bounds_down.append(0.0)
+    bounds_up.append(1)
 for i in range(M2):
     p0.append(1000)
+    bounds_down.append(0.0)
+    bounds_up.append(1e8)
 for i in range(M2):
     p0.append(0.0001)
+    bounds_down.append(0.0)
+    bounds_up.append(1)
+bounds = (bounds_down, bounds_up)
 p0[0] = 0
 p0[2 * M1] = 0
 p0 = [0, 141.95, 725.57, 3340.6, 2.355e-4, 2.034e-4, 4.674e-4, 1.199e-3, 0, 48832, 193909, 1.11e-8, 2.13e-7, 5.78e-7]
-ppot, pcov = scipy.optimize.curve_fit(Zfoster, freq, Zth(freq), maxfev=100000, p0=p0)
+# bounds = tuple(bounds)
+#print(bounds)
+ppot, pcov = scipy.optimize.curve_fit(Zfoster, freq, Zth(freq), maxfev=100000, p0=p0, bounds=bounds)
 print(ppot)
 print(Zfoster(1000, *ppot))
 plt.yscale("log")

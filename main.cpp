@@ -13,7 +13,7 @@
 class String{
 private:
     double T = 102.6; //Tension
-    double time = 0.00001; //в референсной статье -- это k -- шаг по времени
+    double time = 0.000001; //в референсной статье -- это k -- шаг по времени
     double rho = 2500;
     double r = 0.44e-3; //radius of string
     double E = 8.6e9; //Young module
@@ -26,7 +26,7 @@ private:
 	double h = c*time*2; //Размер клетки (расстояние между соседними юнитами)
     long int Number_of_particles = (int)(L/h);
     
-    std::vector<std::vector<double>> Data;
+    std::vector<std::vector<double> > Data;
     
     std::vector<float> sound;
     
@@ -36,7 +36,8 @@ private:
 	void generate_String(){
         int n = Number_of_particles;
 		for (int i = 0; i < Number_of_particles; i++){
-            
+		   // линейный профиль
+           /*
             if (i < 0.7*Number_of_particles){
                 Data[0][i] = i/(7.0*n); //Предыдущее состояние сетки
                 Data[1][i] = i/(7.0*n); //Текущее состояние
@@ -48,12 +49,18 @@ private:
                 Data[2][i] = 0; //Следующее состояние сетки
                     
             }
-            
-            /* Работающий профиль 4 степени
-            Data[0][i] = 1e-8*i*i*(i - Number_of_particles)*(i - Number_of_particles); //Предыдущее состояние сетки
-            Data[1][i] = 1e-8*i*i*(i - Number_of_particles)*(i - Number_of_particles); //Текущее состояние
-            Data[2][i] = 0; //Следующее состояние сетки
             */
+            /* Работающий профиль 4 степени*/
+            Data[0][i] = 1e-13*i*i*(i - Number_of_particles)*(i - Number_of_particles); //Предыдущее состояние сетки
+            Data[1][i] = 1e-13*i*i*(i - Number_of_particles)*(i - Number_of_particles); //Текущее состояние
+            Data[2][i] = 0; //Следующее состояние сетки
+
+             // let's try 2nd degree parabolic profile
+             /*
+            Data[0][i] = 1e-4*i*(i - Number_of_particles); //Предыдущее состояние сетки
+            Data[1][i] = 1e-4*i*(i - Number_of_particles); //Текущее состояние
+            Data[2][i] = 0; //Следующее состояние сетки
+              */
 		}
 	}
 
@@ -92,9 +99,10 @@ private:
 public:
     
     String(){
-        Data = std::vector<std::vector<double>> (3, std::vector<double>(Number_of_particles));
+        Data = std::vector<std::vector<double> > (3, std::vector<double>(Number_of_particles));
         generate_String();
-        std::cout << (int)(L/h);
+        std::cout << (int)(L/h) << std::endl;
+        std::cout << h << std::endl;
     }
     
 	void output(std::ofstream &f){
@@ -129,7 +137,7 @@ public:
 
 int main(){
 	
-    int Num_step = 500000; //Количество шагов рассчета
+    int Num_step = 5000; //Количество шагов рассчета
     std::ofstream fout;
     fout.open("Grid.xyz");
 	String c = String();
@@ -144,7 +152,7 @@ int main(){
     
     std::vector<float> data;
     data = c.Get_some_sound();
-    writeWAV(data, "Attempt1");
+    writeWAV(data, "Attempt1_Non_Stiff");
     
     return 0;
 }

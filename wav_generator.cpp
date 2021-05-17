@@ -81,9 +81,9 @@ void writeWAV(vector<float> rawData, string filename){
 
     audioFile.close();
 }
-int main() {
-    vector<float> data;
-    data = generateRawSineWave(440, 0.5, 2);
-    writeWAV(data, "mySine");
-    return 0;
-}
+//int main() {
+//    vector<float> data;
+//    data = generateRawSineWave(440, 0.5, 2);
+//    writeWAV(data, "mySine");
+//    return 0;
+//}
